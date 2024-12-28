@@ -1,5 +1,7 @@
 # Introdução a PHP
 
+Curso ministrado pela DIO.
+
 ## - O que é PHP
     
     Usado como back, fica por trás, na parte de configuração.
