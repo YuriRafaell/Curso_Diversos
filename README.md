@@ -10,9 +10,19 @@ Atualmente, o repositório conta com as seguintes pastas:
    
    `Descrição:` Apresenta conceitos fundamentais de BI, ferramentas utilizadas, e exemplos de relatórios.
 
+   `Status:` FINALIZADO
+
 2. Introdução ao PHP
    
    `Descrição:` Introdução à linguagem PHP, com exemplos práticos e explicações sobre as principais funções e conceitos.
+
+   `Status:` FINALIZADO
+
+3. Eletrocardiograma
+
+   `Descrição:` ECG do Zero, aulas rápidas e conteúdo direto. Começa pelo essencial: dominio do ECG normal com esse minicurso de ECG Medway.
+
+   `Status:` FINALIZADO
 
 ## Objetivo
 
