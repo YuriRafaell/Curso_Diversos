@@ -22,7 +22,7 @@ Atualmente, o repositório conta com as seguintes pastas:
 
    `Descrição:` ECG do Zero, aulas rápidas e conteúdo direto. Começa pelo essencial: dominio do ECG normal com esse minicurso de ECG Medway.
 
-   `Status:` FINALIZADO
+   `Status:` EM ANDAMENTO
 
 ## Objetivo
 
