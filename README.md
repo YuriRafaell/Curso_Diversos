@@ -12,17 +12,40 @@ Atualmente, o repositório conta com as seguintes pastas:
 
    `Status:` FINALIZADO
 
+   `Link:` https://www.eucapacito.com.br/cursos/business-intelligence-bi/ 
+
 2. Introdução ao PHP
    
    `Descrição:` Introdução à linguagem PHP, com exemplos práticos e explicações sobre as principais funções e conceitos.
 
    `Status:` FINALIZADO
 
+   `Link:` https://web.dio.me/
+
 3. Eletrocardiograma
 
    `Descrição:` ECG do Zero, aulas rápidas e conteúdo direto. Começa pelo essencial: dominio do ECG normal com esse minicurso de ECG Medway.
 
    `Status:` EM ANDAMENTO
+
+   `Link:` https://encurtador.com.br/LVfH 
+
+4. React JS para Iniciantes
+
+   `Descrição:` Aprenda instalação com Vite, estrutura de pastas, JSX, componentes, controle de fluxo, principais hooks como useState e useEffect, além de boas práticas no React. O curso une teoria e prática com exercícios e um projeto real, criando uma base sólida para desenvolver aplicações e avançar em conteúdos mais complexos.
+
+   `Status:` FINALIZADO
+
+   `Link:` https://www.udemy.com/share/10cfOj3@CHpRjCnBMjBB6l6s0SiQfvilanBGXeRNOKZFY_5RyO7dJ3UxX00fFmt5BlW-6hx_kg==/ 
+
+5. Inteligencia Artificial - Conceitos e Prompts
+
+   `Descrição:` 
+
+   `Status:` EM ANDAMENTO
+
+   `Link:` https://pex.sead.ufpb.br/
+
 
 ## Objetivo
 
