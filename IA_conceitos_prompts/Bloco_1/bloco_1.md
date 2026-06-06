@@ -30,3 +30,69 @@ Capacita os computadores a interpretarem e fazerem sentido do mundo visual.
 
 ### Porque chama Inteligência Artificial?
 Marketing, para financiamento de pesquisas
+
+# Aula 3 - Preocupações/Brasil e IA/Como funciona?
+
+### Quem dormina a tecnologia de IA?
+As BIGTECHS, 80 a 90% são elas, e só 4 a 6% vem das universidades
+
+### Qual o objetivo dessas BigTechs?
+Lucro
+
+### O que alimenta a IA?
+Dados, quanto mais dados, melhor!
+
+### Quem tem a guarda dos dados do planeta?
+As bigtechs, como google, microsoft, meta e entre outras
+
+### A IA gera danos ambientais?
+Sim! Água, energia, gases e lixo.
+Milhões de litros de água para refrigera processadores (só a google = 21 bilhões de litros/ano para se manter)
+
+## IA no Brasil
+### Como resolver?
+
+1. Regulamentação para operação das bigtechs
+2. Criando datacenters nacionais das universidades (parcerias) = controle dos dados
+3. Fortalecimento da estrutura de pesquisa e manutenção de dados estratégicos
+
+## IA na prática
+### Como funciona a IA
+Simplificando: IA é um conjunto de softwares que analisa dados, identifica padrão e se torna inteligente por calcular probabilidades de bilhões de informações ao mesmo tempo
+
+A IA opera por aprendizado de dados = chama Aprendizado de máquina
+
+# Aula 4 - Termos técnicos / Aplicações / Primeiro contato
+
+### Machine Learning
+As máquinas são capazes de aprender = Machine Learning
+
+A IA lê e monta os dados em ordem de probabilidade em que pode acontecer
+
+IA não tem sentimento, responde baseados em probabilidade
+
+Tem um diferencial de quando se treinava cada coisa separada, agora se usa um grande conjunto de dados e as IAs vão acumulando experiências (aprendizado multitarefa)
+
+### Deep Learning
+É uma subárea do ML que é uma parte da IA
+
+É inspirado no funcionamento do cérebro huamno, as chamadas redes neurais
+
+Existem as redes neurais profundas, com os chamados neurônios artificiais tentando imitar um cérebro humano, mas ainda diferente
+
+Vem dar maior capacidade de aprendizado (níveis de detalhamento maior no aprendizado) para a IA
+
+A IA tem grande capacidade de identificar padrões em grande volumes de dados
+
+### LLM: A tecnologia por trás da IA textual
+LLM: Large Language Models
+
+Capazes de aprender padrões e relacionamentos (dados relacionais) em textos
+
+Treinadas em grandes quantidades de textos, excelentes para traduções, onde é muito ligado a criação dos chamados assistentes virtuais
+
+### Chatbots
+São programas para simular conversas humanas
+
+### Tokens
+é uma unidade individual de informação dado para a IA (pode ser palavra, uma frase, mas pode ser um caractere)
