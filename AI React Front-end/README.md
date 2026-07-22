@@ -12,7 +12,26 @@
 
 ### Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes
 
+    - Como uma IA é treinada e o que são LLMs: O modelo guarda os parâmetros de reconhecimento do que ele esta apredendo.
+
+    - Inferência é um processo de raciocínio no qual se chega a uma conclusão, ou seja, a um conhecimento desconhecido, a partir de premissas ou observações que são consideradas verdadeiras.
+
+    - Deep Learning: é uma área da IA que usa redes neurais de muitas camadas para aprender padrões complexos em grandes volumes de dados de forma autônoma, inspirada no funcionamento do cérebro humano.
+
+    - Multimodal, as IAs são.
+
+    - IAs Generativas: cria conteúdos originais, como textos, imagens, vídeos ou músicas. Ela aprende padrões com dados existentes para gerar novos resultados semelhantes, mas inéditos.
+
 ### Introdução à Engenharia de Prompts
+
+    - É a técnica a ser usada na formulação da pergunta, chana-se "prompting".
+
+    - A IA vai te responder baseado no que ela aprendeu durante seu treinamento.
+
+    - Cuidados:
+        1. Pode ser ruim perguntas longas ou curtas
+        2. Precisa saber que o comprimento de contexto determina o uso de tokens que vc tem direito nas IAs gratuitas.  Então isso determina quanto tempo você pode usar uma    versão gratuita
+        3. Prompts Enviesados, Alucinações, Considerações Éticas e Privacidade e Segurança.
 
 ## Conceitos Básicos para Começar a Programar em React
 
