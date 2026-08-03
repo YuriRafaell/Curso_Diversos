@@ -35,6 +35,34 @@
 
 ## Conceitos Básicos para Começar a Programar em React
 
+### Conhecendo o React
+
+`1. Bibliotecas:` É como ir à sua loja de móveis fav quando você já tem uma
+casa. Um conjunto de funções ou utilitários reutilizáveis que você pode 
+chamar onde e quando precisar. NÃO DITA O FLUXO do seu programa, mas você sim.
+Ex: Efeitos sonoros p/ jogos, formatação de datas, formatação de dados (temperatura, imagem, áudios, etc), desenvolvimento de aplicações frontend (bootstrap, jquery, react).
+É um conjunto de código pré-escrito, economizando tempo e esforço nos seus projetos, contendo classes, funções e métodos.
+Vantagens: Reutilização de código, Eficiência no desenvolvimento, Padrões de qualidade, Compatibilidade e manutenção, Especialização e domínio de problemas.
+Desvantagens: Tamanho do código, Curva de aprendizado, Dependências e problemas de break-changes (mudança em uma biblioteca que quebra a compatibilidade com versões anteriores), Risco de impacto negativo de desempenho, Limitações de personalização.
+
+`2. Frameworks:` É como o modelo de uma casa: conjunto de plantas-baixas e algumas escolhas limitadas em termos de arquitetura e design. Fornece um "esqueleto" para o seu projeto, definindo estrutura, fluxo e regras.
+Dentro de um framework, bibliotecas e módulos fornecem funcionalidades pré-desenvolvidas, padrões de projeto orientam a arquitetura do código e segurança integrada protege contra vulnerabilidades. Contém bibliotecas e módulos, padrões de projeto e convenções, segurança integrada.
+Vantagens: Produtividade no desenvolvimento, Padronização de código, Reutilização de código, Comunidade e suporte, Integração com outras ferramentas. Ex: Desenvolvimento frontend e backend, desenvolvimento mobile, desenvolvimento de games.
+![Frameworks](image_1.png)
+
+`3. React:` Biblioteca desenvolvida pelo FAcebook para construção de interfaces em diferentes ambientes/dispositivos. 
+Vantagens: Funciona em ambientes variados, Construção de aplicações de maneira eficiente, Reatividade e atualizações de interface de forma automática, Peças individuais de interface chamadas de "componentes".
+
+`4. Componentes com código de marcação:`
+
+### Preparando o Ambiente de Desenvolvimento React
+
+### Empacotadores e Compiladores do React
+
+### Criando Aplicações React com Create React App
+
+### Criando Aplicações React com Vite
+
 ## Entendendo Componentes em React do Zero
 
 ## Componentes em React na Prática
