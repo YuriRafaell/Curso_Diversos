@@ -53,7 +53,19 @@ Vantagens: Produtividade no desenvolvimento, Padronização de código, Reutiliz
 `3. React:` Biblioteca desenvolvida pelo FAcebook para construção de interfaces em diferentes ambientes/dispositivos. 
 Vantagens: Funciona em ambientes variados, Construção de aplicações de maneira eficiente, Reatividade e atualizações de interface de forma automática, Peças individuais de interface chamadas de "componentes".
 
-`4. Componentes com código de marcação:`
+`4. Componentes com código de marcação:` Dividir o código em pequenas estruturas. Tudo fica nos arquivos JSX, ou seja, Javacript XML que é Extenção da sintaxe do JS, ou seja, JS + código de marcação.
+
+`5. Multiplataformas:` React é multiplataformas: Aplicações web com React.js, Aplicações mobile com React Native, Realidade virtual com React VR.
+
+`6. Vantagens do React:` Componentização, Reatividade, Comunidade ativa, SSR, Bibliotecas, Performance.
+
+`7. Desvantagens do React:` Curva de aprendizado, Complexidade, Boilerplate code (termo de algo repetitivo), Decisões de arquitetura, Problemas de SEO.
+
+`8. Pensando do jeito React:`
+
+`8. Documentação do React:`
+
+`8. Estrutura de funcionamento do React:`
 
 ### Preparando o Ambiente de Desenvolvimento React
 
