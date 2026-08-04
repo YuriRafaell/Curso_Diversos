@@ -61,13 +61,28 @@ Vantagens: Funciona em ambientes variados, Construção de aplicações de manei
 
 `7. Desvantagens do React:` Curva de aprendizado, Complexidade, Boilerplate code (termo de algo repetitivo), Decisões de arquitetura, Problemas de SEO.
 
-`8. Pensando do jeito React:`
-
-`8. Documentação do React:`
-
-`8. Estrutura de funcionamento do React:`
+`8. Pensando do jeito React:` UI: User interface, ou interface do usuário. Passo 1: Quebrar o design em componentes. PAsso 2: Criando uma versão estática em react. Passo 3: Adicionando interações aos componentes.
 
 ### Preparando o Ambiente de Desenvolvimento React
+
+### Preparando o Ambiente de Desenvolvimento React
+
+`1. O que é o Node.js:` Assistente que permite que o JS funcione fora do navegador, como em um PC ou servidor. Permite que o JS funcione fora dos navegadores.
+
+`2. A importância do Node.js para o desenvolvimento de aplicações React:` Node.js + React é impotante pois, Ambiente de ezecução JS, Uso de ferramentas como create-react-app e vite, Gerenciamento de pacote, Desenvolvimento local.
+
+`3. Gerenciadores de pacotes:` Ferramentas que permite a instalação, gerenciamento e compartilhamento de bibliotecas e pacotes de código. 
+![Gerenciadores de pacotes](image_2.png)
+
+`4. Introdução ao npm:` Node Package Manager, gerenciador de pacotes padrão do Node.js.
+
+`5. Node Package Execute (npx):`
+
+`6. Gerenciador de pacotes Yarn:`
+
+`7. Gerenciador de pacotes pnpm:`
+
+`8. Ferramentas online para criar projetos em React:`
 
 ### Empacotadores e Compiladores do React
 
