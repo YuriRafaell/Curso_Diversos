@@ -76,13 +76,13 @@ Vantagens: Funciona em ambientes variados, Construção de aplicações de manei
 
 `4. Introdução ao npm:` Node Package Manager, gerenciador de pacotes padrão do Node.js.
 
-`5. Node Package Execute (npx):`
+`5. Node Package Execute (npx):` Executável do npm que permite executar pacotes Node.js temporariamente, sem a necessidade de instalá-los globalmente. Ele é útil para rodar comandos de pacotes específicos sem a necessidade de instalá-los previamente.
 
-`6. Gerenciador de pacotes Yarn:`
+`6. Gerenciador de pacotes Yarn:` Gerenciador de pacotes alternativos ao npm. `-d` adiciona o pacote como dependência de desenvolvimento.
 
-`7. Gerenciador de pacotes pnpm:`
+`7. Gerenciador de pacotes pnpm:` É um gerenciador de pacotes alternativo para Node.js, cujo nome significa Performant NPM.
 
-`8. Ferramentas online para criar projetos em React:`
+`8. Ferramentas online para criar projetos em React:` StackBlitz, CodeSandbox
 
 ### Empacotadores e Compiladores do React
 
