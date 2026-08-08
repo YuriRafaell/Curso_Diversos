@@ -86,6 +86,112 @@ Vantagens: Funciona em ambientes variados, Construção de aplicações de manei
 
 ### Empacotadores e Compiladores do React
 
+`1. Compiladores:` Ferramentas que traduzem código de uma linguagem de programação para outra. No contexto das aplicações front-end, faz com que seu projeto possam ser acessíveis por diferentes versões de navegadores e dispositivos mais antigos. São essenciais pois: Copatibilidade com navegadores, Permite o uso de recursos de código moderno, Otimização e minificação, Preparação do projeto para produção.
+
+`Transpiladores:` Converte código-fonte de uma linguagem para outra linguagem de mesmo nível de abstração.
+
+`2. Linguagens de Saída do Compilador Js, Estágio de Comp:` Diferentes compiladores podem transformar o código em diferentes linguagens de programação, Compiladores com saídas binárias (0s ou 1s), Conversão de código em versões mais antigas da mesma linguagem de programação, Compilação para a mesma linguagem de programação, ex: typescript e babel.
+Em JS opera em estágios: Interpreta o código JS para executá-la rapidamente, O compilador otimiza partes frequentes ou repetidas do código, Partes otimizadas do código são transformadas em código de máquina para melhorar o desempenho.
+
+`3. Linguagens Interpretadas e Compilador JIT:` JS é uma linguagem de programação INTERPRETADA. É código-fonte são traduzidas linha por linha para uma representação de código de máquina antes da execução, em tempo real.
+![Linguagens Interpretadas](image_3.png)
+
+`Compilador JIT (Just in Time):` Um compilador JIT é responsável por traduzir o código fonte do programa em código de máquina executável, Utiliza informações sobre o contexto de execução para decidir quais partes do código devem ser compiladase executadas em tempo real, Identifica partes do código que são executadas com frequências e as otimizam um desempenho máaximo.
+
+`4. Babel, Compilador JS:` Babel: Ferramentas usada principalmente para converter código ECMAScript 2015+ em uma versão compatpivel com versões anteriores do JS em navegadores ou ambientes atuais e mais antigos. Benefícios: Transformar sintaxe, Preencher recursos ausentes, Transformação de código-fonte (Codemods), Otimizações de código, plugins e mais. O babel possui presets, que são conjuntos predefinidos de plugins que configuram o Babel para lidar com determinados tipos de transformação de  código.
+
+`5. Módulos JS:` Com o aumento das aplicações JS, surgiu a necessidade de dividir nossos códigos em módulos que podem ser importados quando necessário. Benefícios: Escopo e responsabilidade única, Os módulos estão presentes no Node.js, Maioria dos navegadores dão suporte aos módulos.
+
+`6. CommonJS (CJS) e EcmaScript Modules (ESM):` CJS: Especificação para módulos em JS, usada principalmente em ambientes de servidor, como Node.js. 
+
+ESM: Mais comumente utilizado em ambientes de navegador modernos e em algumas ferramentas de desenvolvimento front-end.
+
+![CJS e ESM](image_4.png)
+
+`7. Processo de Empacotamento (bundling):` Bundling (empacotamento) é um processo que resolve as dependências de arquivos e junta os módulos de uma aplicação dentro de pacotes para o navegador, para poder reduzir o número de requisições por arquivo quando o usuário abre a página.Conforme a aplicação cresce, o seu bundle (pacote) também cresce. Quanto maior o arquivo de bundle, mais tempo demora para o site carregar para o usuário.
+
+`8. Características do bundlers (empacotadores):` O processo de empacotamento é feito pelos bundlers. Características que os tornam bundlers necessários: Complexidade do desenvolvimento, Dependências e bibliotecas, Otimização de carregamento, Gestão de recursos estáticos.
+
+`9. Compilador e Empacotadores - Quem Realiza a Otimização de Código do Nosso Projeto:` Geralmente, os bundlers se concentram em otimizações específicas para o processo de empacotamento e carregamento de código, enquanto os compiladores realizam otimizações mais abrangentes durante o processo de transpilação do código-fonte.
+
+`10. Conhecendo o Webpack (bundler):` Empacotador de módulos para desenvolvimento web. 
+
+`11. Conhecendo o Esbuild (bundler):` Empacotador e minificador JS. Enpacota o código JS em um único arquivo. Funções do esbuild: Resolver módulos, Relatar problemas de sintaxe, Tree-shaking (remover funções não utilizadas), Eliminar declarações de log e depuração; Minificar o código, Outros.
+Em arquivos css: Codificação de ativos embutidos, Mapas de origem (source maps), Prefixação automática.
+O esbuild oferece um servidor de desenvolvimento local com empacotamento automático e recarga rápida.
+
+`12. React, babel e webpack na prática- Criando a estrutura base do projeto:` 
+```cmd
+npm init -y
+npm install react react-dom
+```
+Cria duas pastas: public e src, dentro de cada uma coloca estes arquivos:
+
+- public: index.html
+- src: App.jsx, index.js
+
+`13. React, babel e webpack na prática- Criando a estrutura do React:`
+
+ARQUIVO NA PASTA REACT, BABEL E WEBPACK
+
+`14. React, babel e webpack na prática- Instalando as dependências do webpack:`
+```cmd
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpark-plugin
+```
+
+`15. React, babel e webpack na prática- Configurando entry point e output do webpack:`
+
+ARQUIVO WEBPARK.CONFIG.JS
+
+`16. React, babel e webpack na prática- Configurando entry point e output do webpack:`
+```cmd
+npm install --save-dev babel-loader
+```
+
+No arquivo package.json, na parte de script, adicionar:
+```json
+"scripts":
+    "start": "webpack server --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+```
+
+`17. React, babel e webpack - Configurando o babel, subindo o servidor local e gerando o build da aplicação:`
+```cmd
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
+```
+
+`18. React e esbuild - Criando a estrutura do react:`
+```cmd
+npm init -y
+
+npm install react react-dom
+
+npm install --save-dev esbuild
+```
+
+`19. Projeto Hands-On: Automatizando o build e Servidor de Aplicações React para o setor de comunicação e mídia:`
+
+No arquivo package.json, na parte de script, adicionar:
+```json
+"scripts":
+    "build": "esbuild src/index.js --outfile=dist/dundle.js --loader:.js=jsx --bundle --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+```
+
+tem que gerar manualmente o arquivo index.html dentro da pasta dist
+
+`20. React e esbuild - Configurando servidor de desenvolvimento:`
+No arquivo package.json, na parte de script, adicionar:
+```json
+"scripts":
+    "start": "esbuild src/index.js --outfile=dist/dundle.js --loader:.js=jsx --bundle --minify --serve --servedir=dist  --watch",
+    "build": "esbuild src/index.js --outfile=dist/dundle.js --loader:.js=jsx --bundle --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+```
+
+em --serve você pode escolher a porta que quer usar, por exemplo: --serve=3000
+
 ### Criando Aplicações React com Create React App
 
 ### Criando Aplicações React com Vite
