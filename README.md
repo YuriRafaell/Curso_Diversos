@@ -42,7 +42,7 @@ Atualmente, o repositório conta com as seguintes pastas:
 
    `Descrição:` Entender e compreender O que é a IA? Benefícios/perigos, O que é prompt? Técnicas, Testando Prompts I - Acadêmicos, Testando Propmpts II -       Diversos
 
-   `Status:` Finalizado
+   `Status:` FINALIZADO
 
    `Link:` https://pex.sead.ufpb.br/
 
