@@ -194,9 +194,171 @@ em --serve você pode escolher a porta que quer usar, por exemplo: --serve=3000
 
 ### Criando Aplicações React com Create React App
 
+`1. Conceitos e Vantagens do CRA:`  Ferramenta para a criação de aplicações React. Simplifica o processo de configuração inicial dos projetos de código com React. Benefícios: Menos para aprender, Recarregamento instantâneo, Otimização automática, Apenas uma dependência.
+
+`2. Projeto Hands-On: Estruturando seu primeiro projeto react para o setor de tecnologia:`
+
+Formas de criar:
+
+```cmd
+yarn create react-app <nome_projeto>
+
+npm init react-app <nome_projeto>
+
+npx create-react-app <nome_projeto>
+```
+
+`3. Criando um projeto React com TypeScript:`
+```cmd
+npx create-react-app <nome_projeto> --template typescript
+```
+
+`4. Ejatando as configurações do CRA:`
+
+- O script 'test' do package.json serve para rodar testes automatizados dos componentes do projeto.
+
+`5. Atualizando o CRA de um projeto:`
+```cmd
+npm install react-script@latest
+```
+
+`6. Criando variáveis de ambiente personalizados:`
+
+Variáveis de ambiente:
+- As variáveis de ambiente devem começar com:
+    - REACT_APP_*
+    - REACT_APP_ORGANIZATION_NAME
+    - REACT_APP_API_URL
+    - REACT_APP_ENABLE_LOG=1
+    - REACT_APP_RELEASE_DATE=2024-01-01
+- Ao alterar qualquer variável de ambiente, é preciso reiniciar o servidor de desenvolvimento, caso ele esteja em execução.
+
+Como criar variáveis de ambiente personalizadas:
+
+1. Criar um arquivo .env para configurar as variáveis de ambiente;
+2. Adicionar as variáveis de ambiente;
+3. Reiniciar o servidor de desenvolvimento;
+4. Acessar os valores das variáveis de ambiente através do código process.env.REACT_APP_[nome da env]
+
+`7. Referenciando variáveis de ambiente no HTML:`
+No index.html em title pode colocar o título desta forma:
+
+```html
+<title>%REACT_APP_ORGANIZATION_NAME%</title>
+```
+
+E nome da variável irá aparecer no titulo do site.
+
+`8. Adicionando variáveis de ambiente através do terminal:`
+```cmd
+REACT_APP_ORGANIZATION_NAME=Teste npm start
+```
+
+`9. Problema do CRA:`
+O CRA foi removido da documentação oficial do React.
+
+O problema e utilizar:
+
+- Tamanho e desempenho podem ser comprometidos
+    - Possui uma série de dependências que aumentam o tamanho final do bundle
+    - Lentidão na criação de novos projetos;
+    - É mais lento e pesado que métodos modernos.
+
+- Existem soluções melhores e mais perfomáticas no mercado:
+    - Vite
+    - Next.js
+    - Remix
+    - Gatsby
+
 ### Criando Aplicações React com Vite
 
+`1. Introdução ao Vite:`
+Vite, ferramenta de construção de proejtos de código. É uma palavra francesa que significa "rápido" e é pronunciada como /vit/. É usado outro empacotador, rollup como bundler, pois acreditam que rollup oferce uma melhor compensação entre desempenho e flexibilidade.
+
+`2. Por que usar o Vite:`
+O vite visa resolver problemas de lentidão no desenvolvimento, aproveitando novas tecnologias, como os módulos ES nativos no navegador.
+
+`3. Criando um projeto com Vite:`
+```cmd
+npm create vite@latest <nome-projeto> -- --template react-ts
+```
+
+`4. Estrutura de pastas e arquivos:`
+
+- O arquivo main.tsx é responsável por renderizar o componente App no elemento root.
+
+`5. Scripts dos projetos Vite:`
+
+- npm run build: Realiza a compilação e empacotamento do proejto para produção.
+
+- A principal função do script 'dev' no package.json é subir o servidor de desenvolvimento.
+
+`6. Variáveis de ambiente:`
+- Variáveis de ambiente
+    - import.meta.env.[nome]
+    - console.log("MODE:", import.meta.env.MODE);
+    - console.log("BASE_URL:", import.meta.env.BASE_URL);
+    - console.log(PROD:", import.meta.env.PROD);
+    - console.log("DEV:", import.meta.env.DEV);
+    - console.log("SSR:", import.meta.env.SSR);
+
+`7. Variáveis de ambiente personalizadas:`
+Criar um arquivo .env
+
+- VITE_API_URL=http://localhost:5000
+
+Ou criar um arquivo .env.production
+
+- VITE_API_URL=http://minha-api.com.br
+
+`8. Variáveis de ambiente com HTML:`
+No index.html escreve:
+
+```html
+<h1> O vite está sendo executado no ambiente: %MODE% </h1>
+```
+
+`9. Como o vite resolve o problema de início lento do servidor:`
+![Vite servidor lento](image_5.png)
+
+Código fonte / Source code
+
+- Contém código que precisa ser transformado e editado frequentemente
+
+- Nem todo o código precisa ser carregado ao mesmo tempo
+
+- O vite serve o código fonte através de módulos nativos do tipo ESM
+
+`10. Como o vite resolve o problema de atualizações lentas dos servidores de desenvolvimento com HMR e ESM:`
+Edição de um arquivo do projeto de código
+
+- Reconstrução de todo o pacote (bundle) do zero é demorado
+- Quanto maior o tamanho do projeto, mais demorado é a atualização do servidor de desenvolvimento
+- Impacta na produtividade dos desenvolvedores que estão trabalhando nos projetos
+
+Hot Module Replacement (HMR): Permite que os módulos sejam atualizados em tempo real (durante a execução) sem afetar o restante da página e sem a necessidade de recarregar a página no navegador, aumentando significativamente a experiência do desenvolvedor.
+
+![HRM](image_6.png)
+
+`11. Como o vote resolve o problema de atualizações lentas dos servidores de desenvovliemnto com cache:`
+O vite utiliza cabeçalhos HTTP para acelerar recarregamentos completos da página nos servidores de desenvolvimento. Mais uma vez, permitindo que o navegador faça mais trabalho por nós.
+
+Em produção, o vite realiza o empacotamento dos arquivos assim como outras ferramentas. Mesmo que os módulos ECMAScript nativos sejam amplamente suportados agora, enviar ESM desagrupados para produção ainda é ineficiente.
+
+`12. Suporte a navegadores:`
+Navegadores antigos podem ser suportados através do plugin oficial @vitejs/plugin-legacy, que adiciona suporte para navegadores legados.
+
 ## Entendendo Componentes em React do Zero
+
+### Componentes Funcionais do React
+
+### Arquivos JSX do React
+
+### Propriedades em React
+
+### Renderizando Listas no React
+
+### Funções Puras e Componentes do React
 
 ## Componentes em React na Prática
 
