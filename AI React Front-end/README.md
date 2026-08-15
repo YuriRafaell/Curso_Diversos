@@ -352,9 +352,36 @@ Navegadores antigos podem ser suportados através do plugin oficial @vitejs/plug
 
 ### Componentes Funcionais do React
 
-### Arquivos JSX do React
+`1. O que é um componente React:` São blocos de conteúdo da interface do usuário (UI) que têm uma única responsabilidade e tem como objetivo a reutilização e organização dos códigos do projeto.
+São compostos por: JS, JSX(HTML) e CSS (opcional).
+
+`2.Tipos de componentes:` Componentes funcionais(functional Components) / Componentes de classe(Class Components). 
+
+`3. Estrutura de um componente:` 
+1. Criar a função e o conteúdo
+2. Exportar e importar
+3. Finalizar a estrutura
+4. Adicionar interatividade
+
+`4. Criando a função e conteúdo:` Pasta SRC => Cria pasta "components" => Criar arquivos com a primeira letra ser maiúsculo Nome_components.tsx (tsx pq esta usando Typescript, mas se tiver usando JS, usar o jsx)
+
+`5. Componentes aninhados:` Acontecem quando você coloca um componente React dentro de outro componente, criando uma relação de "pai e filho.
+
+`6. Componentes Fragment:` São recursos do React que permitem agrupar uma lista de componentes ou elementos filhos sem adicionar nós extras ao DOM (a árvore HTML real da página).
 
 ### Propriedades em React
+
+`1. Trabalhamos com propriedades o tempo todo:`
+
+`1. Passando propriedades aos componentes:`
+
+`1. Especificando um valor padrão para as propriedades:`
+
+`1. Encaminhando propriedades no JSX utilizando o operador spread:`
+
+`1. Passando código JSX como um componente-filho:`
+
+`1. Prop drilling:`
 
 ### Renderizando Listas no React
 
