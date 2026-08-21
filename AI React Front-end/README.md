@@ -371,22 +371,283 @@ São compostos por: JS, JSX(HTML) e CSS (opcional).
 
 ### Propriedades em React
 
-`1. Trabalhamos com propriedades o tempo todo:`
+`1. Trabalhamos com propriedades o tempo todo:` Componentes utilizam propriedades para se comunicar entre si. Elas nos permitem passar qualquer valor ou expressão JS de um componente para outro.
 
-`1. Passando propriedades aos componentes:`
+`2. Passando propriedades aos componentes:` props: Propriedades de componentes.
 
-`1. Especificando um valor padrão para as propriedades:`
+`3. Encaminhando propriedades no JSX utilizando o operador spread:`
 
-`1. Encaminhando propriedades no JSX utilizando o operador spread:`
+Exemplo:
 
-`1. Passando código JSX como um componente-filho:`
+```JSX
+import React from 'react';
 
-`1. Prop drilling:`
+// 1. Componente Filho que encaminha as propriedades
+function CustomButton({ label, ...propsRestantes }) {
+  return (
+    // O operador spread expande todas as propriedades extras aqui dentro
+    <button className="botao-azul" {...propsRestantes}>
+      {label}
+    </button>
+  );
+}
+
+// 2. Componente Pai que utiliza o botão personalizado
+export default function App() {
+  return (
+    <CustomButton 
+      label="Salvar Alterações" 
+      type="submit" 
+      disabled={false} 
+      onClick={() => console.log('Salvando...')} 
+    />
+  );
+}
+
+```
+
+- `Rest Parameter (...propsRestantes):` Na função do componente filho, isolamos a propriedade label. Tudo o que sobrou (type, disabled, onClick) foi guardado automaticamente dentro de um objeto chamado propsRestantes.
+
+- `Spread Operator ({...propsRestantes}):` Dentro do JSX da tag <button>, o operador spread "desembrulha" esse objeto. O React lê essa linha exatamente como se você tivesse digitado: <button type="submit" disabled={false} onClick={...}>.
+
+`4. Passando código JSX como um componente-filho:`
+
+EXemplo:
+
+```jsx
+import React from 'react';
+
+// 1. O componente que recebe o JSX filho
+function Card({ children }) {
+  return (
+    <div style={{ border: '2px solid black', padding: '20px', borderRadius: '8px' }}>
+      {/* Todo JSX enviado pelo pai vai renderizar aqui dentro */}
+      {children}
+    </div>
+  );
+}
+
+// 2. O componente Pai passando o JSX para dentro do Card
+export default function App() {
+  return (
+    <Card>
+      {/* Todo este bloco abaixo é o código JSX passado como filho */}
+      <h1>Título do Card</h1>
+      <p>Este parágrafo e o botão abaixo são componentes-filhos.</p>
+      <button>Clique Aqui</button>
+    </Card>
+  );
+}
+```
+
+- `Entre as tags:` Sempre que abre e fecha uma tag de um componente personalizado (como <Card> ... </Card>), tudo o que você digita no meio vira o "conteúdo filho".
+
+- `A prop children:` O React captura automaticamente esse código JSX do meio e o entrega para o componente Card através de uma propriedade interna chamada children. Basta renderizar {children} onde você deseja que o conteúdo apareça.
+
+`5. Prop drilling:` Dados são passados de um componente pai para vários componentes filhos, mesmo que alguns desses componentes não precisem diretamente desses dados.
 
 ### Renderizando Listas no React
 
+`1. Renderizando dados de arrays:`
+
+Exemplo:
+
+```tsx
+import React from 'react';
+
+// 1. Definimos o tipo dos dados do objeto dentro do array
+interface Usuario {
+  id: number;
+  nome: string;
+}
+
+export default function ListaUsuarios() {
+  // 2. Nosso array de dados fictícios
+  const usuarios: Usuario[] = [
+    { id: 1, nome: 'Ana' },
+    { id: 2, nome: 'Bruno' },
+    { id: 3, nome: 'Carlos' }
+  ];
+
+  return (
+    <div>
+      <h2>Lista de Clientes</h2>
+      <ul>
+        {/* 3. Percorremos o array e retornamos o JSX para cada item */}
+        {usuarios.map((usuario) => (
+          <li key={usuario.id}>
+            {usuario.nome}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+- A propriedade key: Toda vez que renderizamos uma lista com .map(), o elemento pai do retorno (neste caso, a tag <li>) obrigatoriamente precisa receber uma prop chamada key com um identificador único (geralmente o id do banco de dados). Isso ajuda o React a saber exatamente qual item foi alterado, adicionado ou removido, otimizando a performance.
+
+- Chaves {} no JSX: Usamos as chaves {usuarios.map(...)} para avisar ao TSX que vamos executar um código JavaScript puro dentro da estrutura visual.
+
+`2. Filtrando itens de um array:`
+
+Exemplo:
+
+```tsx
+import React from 'react';
+
+// 1. Definição da interface do objeto
+interface Produto {
+  id: number;
+  nome: string;
+  disponivel: boolean;
+}
+
+export default function ListaProdutos() {
+  // 2. Array de objetos original
+  const produtos: Produto[] = [
+    { id: 1, nome: 'Notebook', disponivel: true },
+    { id: 2, nome: 'Smartphone', disponivel: false },
+    { id: 3, nome: 'Teclado Mecânico', disponivel: true },
+  ];
+
+  return (
+    <div>
+      <h2>Produtos Disponíveis</h2>
+      <ul>
+        {/* 3. Filtramos os itens e mapeamos o resultado para JSX */}
+        {produtos
+          .filter((produto) => produto.disponivel === true)
+          .map((produto) => (
+            <li key={produto.id}>
+              {produto.nome}
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+- .filter(...): Cria um novo array contendo apenas os objetos que atendem à condição (onde disponivel é true). O Smartphone é descartado nessa etapa.
+
+- .map(...): Pega esse novo array filtrado e transforma cada objeto em um elemento <li> na tela, utilizando o id como key.
+
+`3. Mantendo a lista ordenada com a propriedade key:`
+
+Exemplo:
+
+```tsx
+import React, { useState } from 'react';
+
+interface Tarefa {
+  id: string; // ID único e fixo para cada item
+  texto: string;
+}
+
+export default function ListaOrdenada() {
+  // 1. Nosso estado inicial com a lista de tarefas
+  const [tarefas, setTarefas] = useState<Tarefa[]>([
+    { id: 'uuid-1', texto: 'Aprender TypeScript' },
+    { id: 'uuid-2', texto: 'Estudar as Keys do React' },
+    { id: 'uuid-3', texto: 'Construir um App' },
+  ]);
+
+  // 2. Função que inverte a ordem da lista
+  const inverterOrdem = () => {
+    setTarefas([...tarefas].reverse());
+  };
+
+  return (
+    <div>
+      <button onClick={inverterOrdem}>Inverter Ordem da Lista</button>
+      
+      <ul>
+        {tarefas.map((tarefa) => (
+          // 3. O uso do id garante que o React saiba exatamente quem mudou de lugar
+          <li key={tarefa.id}>
+            <input type="checkbox" /> {tarefa.texto}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+Se você usasse o índice da posição do array (0, 1, 2) como key, aconteceria um bug visual crítico neste exemplo:
+
+- Ao inverter a lista, se você tivesse marcado o primeiro checkbox (Aprender TypeScript), o checkbox continuaria marcado na primeira posição da tela, mas o texto mudaria para (Construir um App).
+
+- Isso acontece porque o React acha que o elemento com key={0} não mudou de lugar, apenas o texto dele foi alterado. Usando o id, o checkbox se move junto com o texto correto.
+
+`4. Por que o React precisa das chaves key:` Uma chave bem escolhida fornece ao React mais informações do que a posição dentro de um array.
+
+`5. Utilizando índices dos itens do array como chave key:` Sim, é possivel, porém, não é recomendado pois, pode trazer vários bugs para aplicação.
+
 ### Funções Puras e Componentes do React
 
+`1. Funções puras:` Ou pure functions, tem como caracteristica:
+
+- Cuida da sua própria vida: Nçao altera objetos ou variáveis que já existiam antes de ela ser chamada.
+
+- Mesmas entradas, mesmas saídas: Passados os mesmos argumentos, mesmos retornos.
+
+`2. Funções puras no React:`
+Este componente é puro. Ele não mexe em nada externo e, se você passar o mesmo nome e o mesmo periodo, ele sempre retornará exatamente o mesmo JSX:
+
+```tsx
+interface Props {
+  nome: string;
+  periodo: 'manha' | 'tarde';
+}
+
+function BoasVindasPuro({ nome, periodo }: Props) {
+  // Sem efeitos colaterais. Apenas lê as props e retorna o JSX.
+  const saudacao = periodo === 'manha' ? "Bom dia" : "Boa tarde";
+  
+  return <p>{saudacao}, {nome}!</p>;
+}
+```
+
+`3. Side effects (efeitos colaterais) consequências (não) intencionais:` 
+Este componente é impuro porque altera uma variável fora dele e depende do horário atual. Ele gerará resultados diferentes a cada renderização:
+
+```tsx
+let totalAcessos = 0; // Variável externa sendo modificada (Efeito colateral!)
+
+function BoasVindasImpuro({ nome }: { nome: string }) {
+  totalAcessos++; 
+  
+  // Depende de um fator externo e dinâmico (O resultado muda dependendo da hora)
+  const horaAtual = new Date().getHours(); 
+  const saudacao = horaAtual < 12 ? "Bom dia" : "Boa tarde";
+
+  return <p>{saudacao}, {nome}! Acessos: {totalAcessos}</p>;
+}
+```
+
+`4. Onde você pode causar efeitos colaterais:`
+- Event Handlers: manipuladores de eventos;
+
+- Event Handlers são funções que executam ao realizar alguma ação;
+
+- Hook useEffect
+
+`7. Vantagens em manter os componentes puros:`
+
+- Os componentes podem ser executados em diferentes ambientes
+
+- Melhora no desempenho dos componentes
+
+- Torna-se seguro para o React parar o processo de renderização
+
 ## Componentes em React na Prática
+
+### Manipulação de Eventos no React
+
+### Renderização de Arquivos no React
+
+### Os diferentes Tipos de Componentes no React
 
 ## Projeto Final: Educador Financeiro Inteligente
